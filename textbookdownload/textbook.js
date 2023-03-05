@@ -6,7 +6,6 @@ fetch('/textbook-data')
     const textbookList8th = document.querySelector('#textbook-list-8th');
     const textbookList9th = document.querySelector('#textbook-list-9th');
     const textbookList10th = document.querySelector('#textbook-list-10th');
-  });
 
     data.featuredTextbooks.forEach(textbook => {
       const li = document.createElement('li');
@@ -21,5 +20,8 @@ fetch('/textbook-data')
     });
 
     data.textbooks8th.forEach(textbook => {
-      const li = document
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#">${textbook.title}</a> <a href="#" class="download-link">Download</a>`;
+      textbookList8th.appendChild(li);
     });
+  });
